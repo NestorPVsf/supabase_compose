@@ -316,6 +316,7 @@ services:
       # TODO: Allow configuring VERIFY_JWT per function. This PR might help: https://github.com/supabase/cli/pull/786
       VERIFY_JWT: "${FUNCTIONS_VERIFY_JWT}"
       N8N_WEBHOOK_SECRET: ${N8N_WEBHOOK_SECRET}
+      N8N_EMAIL_CONFIRMATION_WEBHOOK: ${N8N_EMAIL_CONFIRMATION_WEBHOOK}
     command: [ "start", "--main-service", "/home/deno/functions/main" ]
 
   analytics:
