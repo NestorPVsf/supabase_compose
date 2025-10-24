@@ -413,7 +413,7 @@ services:
       ]
     networks:
       default: {}
-      DualPresence_Net:
+      DualPresence_Overlay:
         aliases:
           - supabase-db   # hostname estable para n8n
   vector:
@@ -495,6 +495,6 @@ volumes:
   db-config:
 
 networks:
-  DualPresence_Net:
+  DualPresence_Overlay:
     external: true
-    name: DualPresence_Net
+    name: DualPresence_Overlay
