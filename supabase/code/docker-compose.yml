@@ -411,7 +411,11 @@ services:
         "-c",
         "log_min_messages=fatal" # prevents Realtime polling queries from appearing in logs
       ]
-
+    networks:
+      default: {}
+      DualPresence_Net:
+        aliases:
+          - supabase-db   # hostname estable para n8n
   vector:
     image: timberio/vector:0.28.1-alpine
     restart: unless-stopped
@@ -489,3 +493,8 @@ services:
 
 volumes:
   db-config:
+
+networks:
+  DualPresence_Net:
+    external: true
+    name: DualPresence_Net
