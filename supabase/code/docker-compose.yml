@@ -366,7 +366,7 @@ services:
     restart: unless-stopped
     volumes:
       # 👉 datos persistentes fuera del repo (UNO solo):
-      - /var/lib/dualpresence/supabase/db-data:/var/lib/postgresql/data
+      - ${DB_DATA_DIR:-/var/lib/dualpresence/supabase/db-data}:/var/lib/postgresql/data  #antes - /var/lib/dualpresence/supabase/db-data:/var/lib/postgresql/data
       # scripts de init/seed (déjalos tal cual):
       - ./volumes/db/realtime.sql:/docker-entrypoint-initdb.d/migrations/99-realtime.sql:Z
       # Must be superuser to create event trigger
