@@ -154,12 +154,16 @@ services:
       # GOTRUE_HOOK_PASSWORD_VERIFICATION_ATTEMPT_URI: "pg-functions://postgres/public/password_verification_attempt"
 
       # GOTRUE_HOOK_SEND_SMS_ENABLED: "false"
+      
+      # URI del hook — por defecto apunto al servicio interno de Edge Functions
       # GOTRUE_HOOK_SEND_SMS_URI: "pg-functions://postgres/public/custom_access_token_hook"
       # GOTRUE_HOOK_SEND_SMS_SECRETS: "v1,whsec_VGhpcyBpcyBhbiBleGFtcGxlIG9mIGEgc2hvcnRlciBCYXNlNjQgc3RyaW5n"
 
-      # GOTRUE_HOOK_SEND_EMAIL_ENABLED: "false"
-      # GOTRUE_HOOK_SEND_EMAIL_URI: "http://host.docker.internal:54321/functions/v1/email_sender"
-      # GOTRUE_HOOK_SEND_EMAIL_SECRETS: "v1,whsec_VGhpcyBpcyBhbiBleGFtcGxlIG9mIGEgc2hvcnRlciBCYXNlNjQgc3RyaW5n"
+      #GOTRUE_HOOK_SEND_EMAIL_ENABLED: "false"
+      # URI del hook — por defecto apunto al servicio interno de Edge Functions (evitas depender del host y no necesitas apikey si es red interna)
+      #GOTRUE_HOOK_SEND_EMAIL_URI: ${SEND_EMAIL_HOOK_URI-http://functions:9000/email_sender}
+      # Secreto del hook (formato: "v1,<secret_base64>")
+      #GOTRUE_HOOK_SEND_EMAIL_SECRETS: "v1,whsec_VGhpcyBpcyBhbiBleGFtcGxlIG9mIGEgc2hvcnRlciBCYXNlNjQgc3RyaW5n"
 
   rest:
     image: postgrest/postgrest:v12.2.12
