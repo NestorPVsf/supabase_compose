@@ -324,6 +324,7 @@ services:
       GEMINI_API_KEY: ${GEMINI_API_KEY}
       N8N_WEBHOOK_SECRET: ${N8N_WEBHOOK_SECRET}
       N8N_EMAIL_CONFIRMATION_WEBHOOK: ${N8N_EMAIL_CONFIRMATION_WEBHOOK}
+      N8N_WELCOME_EMAIL_WEBHOOK_URL: ${N8N_WELCOME_EMAIL_WEBHOOK_URL}
     command: [ "start", "--main-service", "/home/deno/functions/main" ]
 
   analytics:
