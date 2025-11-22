@@ -420,9 +420,7 @@ services:
       ]
     networks:
       default: {}
-      GeneralNet:
-        aliases:
-          - supabase-db   # hostname estable para n8n
+      
   vector:
     image: timberio/vector:0.28.1-alpine
     restart: unless-stopped
@@ -505,7 +503,4 @@ networks:
   default:
     external: true
     name: easypanel
-  GeneralNet:
-    external: true
-    name: GeneralNet
 
