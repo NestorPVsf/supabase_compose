@@ -420,7 +420,7 @@ services:
       ]
     networks:
       default: {}
-      DualPresence_Overlay:
+      GeneralNet:
         aliases:
           - supabase-db   # hostname estable para n8n
   vector:
