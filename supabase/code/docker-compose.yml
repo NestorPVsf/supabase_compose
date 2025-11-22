@@ -502,6 +502,10 @@ volumes:
   db-config:
 
 networks:
+  default:
+    external: true
+    name: easypanel
   GeneralNet:
     external: true
     name: GeneralNet
+
