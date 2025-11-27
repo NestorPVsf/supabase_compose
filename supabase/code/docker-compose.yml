@@ -272,6 +272,7 @@ services:
       ENABLE_IMAGE_TRANSFORMATION: "true"
       IMGPROXY_URL: http://imgproxy:5001
       URL: ${URL}
+      REQUEST_ALLOW_X_FORWARDED_PATH: "true"
 
   imgproxy:
     image: darthsim/imgproxy:v3.8.0
