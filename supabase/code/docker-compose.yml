@@ -271,6 +271,7 @@ services:
       GLOBAL_S3_BUCKET: stub
       ENABLE_IMAGE_TRANSFORMATION: "true"
       IMGPROXY_URL: http://imgproxy:5001
+      URL: ${URL}
 
   imgproxy:
     image: darthsim/imgproxy:v3.8.0
