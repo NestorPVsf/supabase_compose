@@ -502,6 +502,9 @@ services:
 
 volumes:
   db-config:
+    driver: local
+  storage-data:
+    driver: local
 
 networks:
   DualPresence_Overlay:
